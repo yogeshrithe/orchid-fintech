@@ -4,6 +4,9 @@ import {
   Col,
   Card,
   Statistic,
+  Modal,
+  Form,
+  Select,
   Input,
   Button,
   List,
@@ -42,7 +45,27 @@ const pencil = [
 ];
 
 const Payment = () => {
-  const [copied,setCopied]=useState(false)
+  const [copied, setCopied] = useState(false)
+  const [isModalOpen, setIsModalOpen] = useState(false);
+  const AccountNo = [{ value: '65645656', label: '65645656' },
+  { value: '56767676', label: '56767676' },
+  { value: '5675675676', label: '5675675676' }
+  ]
+  const platformNames = [{ value: 'paytm', label: 'paytm' },
+  { value: 'googlepay', label: 'googlepay' },
+  { value: 'razorpay', label: 'razorpay' }
+  ]
+  const showModal = () => {
+    setIsModalOpen(true);
+  };
+
+  const handleOk = () => {
+    setIsModalOpen(false);
+  };
+
+  const handleCancel = () => {
+    setIsModalOpen(false);
+  };
   return (
     <div>
       <Row>
@@ -59,7 +82,7 @@ const Payment = () => {
                     <h6 className="font-semibold m-0">Payment Gateways</h6>
                   </Col>
                   <Col xs={24} md={12} className="d-flex">
-                    <Button type="primary">ADD</Button>
+                    <Button type="primary" onClick={showModal}>ADD</Button>
                   </Col>
                 </Row>
               </>
@@ -71,7 +94,7 @@ const Payment = () => {
                   <img src={paytm} alt="paytm" style={{ height: '50px', width: '70px' }} />
                   <Input className="card-number" value="http://paytm/yogeshrithe" style={{ marginLeft: '8px' }}></Input>
 
-                  <CopyToClipboard text="http://paytm/yogeshrithe" onCopy={()=>setCopied(true)}>
+                  <CopyToClipboard text="http://paytm/yogeshrithe" onCopy={() => setCopied(true)}>
                     <Button type="primary" style={{ marginLeft: '20px' }}>
                       Copy
                     </Button>
@@ -88,10 +111,12 @@ const Payment = () => {
               <Col span={24} md={24}>
                 <Card className="payment-method-card">
                   <img src={razorpay} alt="paytm" style={{ height: '50px', width: '70px' }} />
-                  <Input className="card-number" value="http://paytm/yogeshrithe" style={{ marginLeft: '8px' }}></Input>
-                  <Button type="primary" style={{ marginLeft: '20px' }}>
-                    Copy
-                  </Button>
+                  <Input className="card-number" value="http://razorpay/yogeshrithe" style={{ marginLeft: '8px' }}></Input>
+                  <CopyToClipboard text="http://razorpay/yogeshrithe" onCopy={() => setCopied(true)}>
+                    <Button type="primary" style={{ marginLeft: '20px' }}>
+                      Copy
+                    </Button>
+                  </CopyToClipboard>
                   <Button type="primary" style={{ marginLeft: '30px', marginRight: '8px' }}>
                     Share
                   </Button>
@@ -102,10 +127,12 @@ const Payment = () => {
               <Col span={24} md={24}>
                 <Card className="payment-method-card">
                   <img src={googlepay} alt="paytm" style={{ height: '50px', width: '70px' }} />
-                  <Input className="card-number" value="http://paytm/yogeshrithe" style={{ marginLeft: '8px' }}></Input>
-                  <Button type="primary" style={{ marginLeft: '20px' }}>
-                    Copy
-                  </Button>
+                  <Input className="card-number" value="http://googlepay/yogeshrithe" style={{ marginLeft: '8px' }}></Input>
+                  <CopyToClipboard text="http://googlepay/yogeshrithe" onCopy={() => setCopied(true)}>
+                    <Button type="primary" style={{ marginLeft: '20px' }}>
+                      Copy
+                    </Button>
+                  </CopyToClipboard>
                   <Button type="primary" style={{ marginLeft: '30px', marginRight: '8px' }}>
                     Share
                   </Button>
@@ -115,6 +142,39 @@ const Payment = () => {
           </Card>
         </Col>
       </Row>
+      <Modal title="Add Payment Gateway" okText="Add" width={1000} bodyStyle={{ height: 400 }} visible={isModalOpen} onOk={handleOk} onCancel={handleCancel}>
+        <Form>
+          <Row>
+            <Col xl={12}>
+              <label >Bank Name</label>
+              <Input placeholder="Enetr Bank Name" />
+            </Col>
+            <Col xl={12}>
+              <label style={{ marginLeft: '18px' }}>Account No</label>
+              <Select placeholder="Enter Account No" size='large' options={AccountNo} style={{ marginLeft: '13px', width: 470 }} />
+            </Col>
+          </Row>
+          <Row style={{ marginTop: '30px' }}>
+            <Col xl={12}>
+              <label >Platform Name</label>
+              <Select placeholder="Enter Name" size='large' options={platformNames} style={{ width: 480 }} />
+            </Col>
+          </Row>
+          <Row style={{ marginTop: '50px' }}>
+            <label style={{ color: '#1890ff' }}>Platform Details</label>
+          </Row>
+          <Row style={{ marginTop: '30px' }}>
+            <Col xl={12}>
+              <label >Merchant ID</label>
+              <Input placeholder="Enter Mobile No"  />
+            </Col>
+            <Col xl={12}>
+              <label style={{ marginLeft: '18px' }}>Merchant Key</label>
+              <Input placeholder="Enter Account No"   style={{ marginLeft: '13px' }} />
+            </Col>
+          </Row>
+        </Form>
+      </Modal>
     </div>
   )
 }

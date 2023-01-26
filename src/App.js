@@ -18,6 +18,7 @@ import Debit from "./pages/Debit";
 import SignUp from "./pages/SignUp";
 import SignIn from "./pages/SignIn";
 import Payment from "./pages/Payment";
+import AddBank from "./pages/AddBank";
 import Main from "./components/layout/Main";
 import "antd/dist/antd.css";
 import "./assets/styles/main.css";
@@ -36,6 +37,7 @@ function App() {
           <Route exact path="/credit" component={Credit} />
           <Route exact path="/debit" component={Debit} />
           <Route exact path="/payment" component={Payment} />
+          <Route exact path="/addBank" component={AddBank} />
           <Redirect from="*" to="/dashboard" />
         </Main>
       </Switch>

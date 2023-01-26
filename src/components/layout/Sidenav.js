@@ -11,10 +11,14 @@
 */
 
 // import { useState } from "react";
-import { Menu, Button } from "antd";
+import { render } from "@testing-library/react";
+import { Menu, Button, Collapse } from "antd";
 import Title from "antd/lib/skeleton/Title";
 import { NavLink, useLocation } from "react-router-dom";
 import logo from "../../assets/images/orchid-fintech.jpeg";
+
+
+const { Panel } = Collapse;
 
 function Sidenav({ color }) {
   const { pathname } = useLocation();
@@ -237,19 +241,34 @@ function Sidenav({ color }) {
             <span className="label">Debit</span>
           </NavLink>
         </Menu.Item>
-        <Menu.Item key="6">
-          <NavLink to="/payment">
+        <Collapse expandIconPosition="right">
+          <Panel header={<Menu.Item key="6">
             <span
               className="icon"
-              style={{
-                background: page === "payment" ? color : "",
-              }}
             >
               {profile}
             </span>
-            <span className="label">Payment Gateway</span>
-          </NavLink>
-        </Menu.Item>
+            <span className="label" style={{ color: 'black' }}>Payment Gateway</span>
+          </Menu.Item>} key="1">
+            <NavLink to="/addBank">
+              <Menu.Item style={{ color: 'black', marginLeft: '15px' }}>
+                <span className="icon" style={{
+                  background: page === "addBank" ? color : "",
+                }}>{profile}</span>
+                <span className="label">Add Bank</span>
+              </Menu.Item>
+            </NavLink>
+            <NavLink to="/payment">
+              <Menu.Item style={{ color: 'black', marginTop: '22px', marginLeft: '15px' }}>
+                <span className="icon" style={{
+                  background: page === "payment" ? color : "",
+                }}>{profile}</span>
+                <span className="label">Add Payment Gateway</span>
+              </Menu.Item>
+            </NavLink>
+          </Panel>
+
+        </Collapse>
         {/* <Menu.Item key="7">
           <NavLink to="/sign-in">
             <span className="icon">{signin}</span>

@@ -705,7 +705,7 @@ function Catalogue() {
             <Card
               bordered={false}
               className="criclebox tablespace mb-24"
-              title="Catalogues"
+              title="Credits"
             // extra={
             //   // <>
             //   //   <Radio.Group onChange={onChange} defaultValue="a">
