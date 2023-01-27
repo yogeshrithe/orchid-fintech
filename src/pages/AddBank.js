@@ -83,13 +83,18 @@ import {
   
     },
     {
-      title: "Email",
-      dataIndex: "email",
-      key: "email",
+      title: "Account No",
+      dataIndex: "acno",
+      key: "acno",
+    },
+    {
+      title: "Account Holder Name",
+      dataIndex: "ahname",
+      key: "ahname",
     },
   
     {
-      title: "Mobile No",
+      title: "Registered Mobile No",
       key: "mobileno",
       dataIndex: "mobileno",
     },
@@ -113,19 +118,26 @@ import {
               src={face2}
             ></Avatar> */}
           <div className="avatar-info">
-            <Title level={5}>Yogesh Rithe</Title>
+            <Title level={5}>SBI</Title>
           </div>
           {/* </Avatar.Group>{" "} */}
         </>
       ),
-      email: (
+      acno: (
         <>
           <div className="author-info">
-            <Title level={5}>yogeshrithe.yr@gmail.com</Title>
+            <Title level={5}>768*******45</Title>
           </div>
         </>
       ),
   
+      ahname: (
+        <>
+          <div className="author-info">
+            <Title level={5}>Yogesh Sanket Rithe</Title>
+          </div>
+        </>
+      ),
       mobileno: (
         <>
           <div className="author-info">
@@ -155,23 +167,30 @@ import {
               src={face2}
             ></Avatar> */}
           <div className="avatar-info">
-            <Title level={5}>Yogesh Rithe</Title>
+            <Title level={5}>ICICI</Title>
           </div>
           {/* </Avatar.Group>{" "} */}
         </>
       ),
-      email: (
+      acno: (
         <>
           <div className="author-info">
-            <Title level={5}>yogeshrithe.yr@gmail.com</Title>
+            <Title level={5}>867*******20</Title>
           </div>
         </>
       ),
   
+      ahname: (
+        <>
+          <div className="author-info">
+            <Title level={5}>Rohit Manish Jaiswal</Title>
+          </div>
+        </>
+      ),
       mobileno: (
         <>
           <div className="author-info">
-            <Title level={5}>6789768543</Title>
+            <Title level={5}>6789543679</Title>
           </div>
         </>
       ),
@@ -197,23 +216,30 @@ import {
               src={face2}
             ></Avatar> */}
           <div className="avatar-info">
-            <Title level={5}>Yogesh Rithe</Title>
+            <Title level={5}>Bank Of Maharashtra</Title>
           </div>
           {/* </Avatar.Group>{" "} */}
         </>
       ),
-      email: (
+      acno: (
         <>
           <div className="author-info">
-            <Title level={5}>yogeshrithe.yr@gmail.com</Title>
+            <Title level={5}>532*******85</Title>
           </div>
         </>
       ),
   
+      ahname: (
+        <>
+          <div className="author-info">
+            <Title level={5}>Ankush Rohit Gote</Title>
+          </div>
+        </>
+      ),
       mobileno: (
         <>
           <div className="author-info">
-            <Title level={5}>6789768543</Title>
+            <Title level={5}>8976543256</Title>
           </div>
         </>
       ),
@@ -226,130 +252,7 @@ import {
         </>
       ),
     },
-    {
-      key: "4",
-      name: (
-        <>
-          {/* <Avatar.Group>
-            <Avatar
-              className="shape-avatar"
-              shape="square"
-              size={40}
-              src={face2}
-            ></Avatar> */}
-          <div className="avatar-info">
-            <Title level={5}>Yogesh Rithe</Title>
-          </div>
-          {/* </Avatar.Group>{" "} */}
-        </>
-      ),
-      email: (
-        <>
-          <div className="author-info">
-            <Title level={5}>yogeshrithe.yr@gmail.com</Title>
-          </div>
-        </>
-      ),
-  
-      mobileno: (
-        <>
-          <div className="author-info">
-            <Title level={5}>6789768543</Title>
-          </div>
-        </>
-      ),
-      action: (
-        <>
-         <Space wrap >
-            <EditOutlined style={{color:'#1890ff'}} />
-            <DeleteOutlined style={{color:'red'}}/>
-          </Space>
-        </>
-      ),
-    },
-    {
-      key: "5",
-      name: (
-        <>
-          {/* <Avatar.Group>
-            <Avatar
-              className="shape-avatar"
-              shape="square"
-              size={40}
-              src={face2}
-            ></Avatar> */}
-          <div className="avatar-info">
-            <Title level={5}>Yogesh Rithe</Title>
-          </div>
-          {/* </Avatar.Group>{" "} */}
-        </>
-      ),
-      email: (
-        <>
-          <div className="author-info">
-            <Title level={5}>yogeshrithe.yr@gmail.com</Title>
-          </div>
-        </>
-      ),
-  
-      mobileno: (
-        <>
-          <div className="author-info">
-            <Title level={5}>6789768543</Title>
-          </div>
-        </>
-      ),
-      action: (
-        <>
-          <Space wrap >
-            <EditOutlined style={{color:'#1890ff'}} />
-            <DeleteOutlined style={{color:'red'}}/>
-          </Space>
-        </>
-      ),
-    },
-  
-    {
-      key: "6",
-      name: (
-        <>
-          {/* <Avatar.Group>
-            <Avatar
-              className="shape-avatar"
-              shape="square"
-              size={40}
-              src={face2}
-            ></Avatar> */}
-          <div className="avatar-info">
-            <Title level={5}>Yogesh Rithe</Title>
-          </div>
-          {/* </Avatar.Group>{" "} */}
-        </>
-      ),
-      email: (
-        <>
-          <div className="author-info">
-            <Title level={5}>yogeshrithe.yr@gmail.com</Title>
-          </div>
-        </>
-      ),
-  
-      mobileno: (
-        <>
-          <div className="author-info">
-            <Title level={5}>6789768543</Title>
-          </div>
-        </>
-      ),
-      action: (
-        <>
-          <Space wrap >
-            <EditOutlined style={{color:'#1890ff'}} />
-            <DeleteOutlined style={{color:'red'}}/>
-          </Space>
-        </>
-      ),
-    },
+    
   ];
   // project table start
   // const project = [
@@ -660,7 +563,7 @@ import {
               <Card
                 bordered={false}
                 className="criclebox tablespace mb-24"
-                title="User Master"
+                title="Bank Details"
               // extra={
               //   // <>
               //   //   <Radio.Group onChange={onChange} defaultValue="a">

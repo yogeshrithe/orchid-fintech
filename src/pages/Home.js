@@ -141,14 +141,14 @@ function Home() {
   const count = [
     {
       today: "Total Credit",
-      title: "$53,000",
+      title: "RS.53,000",
       persent: "+30%",
       icon: dollor,
       bnb: "bnb2",
     },
     {
       today: "Total Debit",
-      title: "3,200",
+      title: "RS.3,200",
       persent: "+20%",
       icon: profile,
       bnb: "bnb2",
@@ -162,7 +162,7 @@ function Home() {
     },
     {
       today: "Total Loss",
-      title: "$13,200",
+      title: "RS.13,200",
       persent: "10%",
       icon: cart,
       bnb: "bnb2",
@@ -172,21 +172,21 @@ function Home() {
   const count1=[
     {
       today: "Total Branch",
-      title: "$13,200",
+      title: "RS.13,200",
       persent: "10%",
       icon: cart,
       bnb: "bnb2",
     },
     {
       today: "Total Commission",
-      title: "$13,200",
+      title: "RS.13,200",
       persent: "10%",
       icon: cart,
       bnb: "bnb2",
     },
     {
       today: "Total Expense",
-      title: "$13,200",
+      title: "RS.13,200",
       persent: "10%",
       icon: cart,
       bnb: "bnb2",
@@ -386,8 +386,8 @@ function Home() {
                         {c.title} <small className={c.bnb}></small>
                       </Title>
                     </Col>
-                    <Col xs={6}>
-                      <div className="icon-box">{c.icon}</div>
+                    <Col xs={6} style={{marginLeft:'-18px'}}>
+                      <div className="icon-box" >{c.icon}</div>
                     </Col>
                   </Row>
                 </div>
@@ -416,7 +416,7 @@ function Home() {
                         {c.title} <small className={c.bnb}></small>
                       </Title>
                     </Col>
-                    <Col xs={6}>
+                    <Col xs={6} >
                       <div className="icon-box">{c.icon}</div>
                     </Col>
                   </Row>
