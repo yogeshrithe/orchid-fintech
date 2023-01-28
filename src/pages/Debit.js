@@ -29,7 +29,7 @@ import {
   Typography,
 } from "antd";
 import moment from 'moment';
-import { useState,useEffect} from 'react';
+import { useState, useEffect } from 'react';
 import SearchOutlined from '@ant-design/icons/SearchOutlined';
 import EditOutlined from '@ant-design/icons/EditOutlined';
 import DeleteOutlined from '@ant-design/icons/DeleteOutlined';
@@ -84,6 +84,12 @@ const columns = [
 
   },
   {
+    title: "Client",
+    dataIndex: "cname",
+    key: "cname",
+
+  },
+  {
     title: "Amount",
     dataIndex: "amount",
     key: "amount",
@@ -124,6 +130,14 @@ const data = [
         {/* </Avatar.Group>{" "} */}
       </>
     ),
+    
+    cname: (
+      <>
+        <div className="author-info">
+          <Title level={5}>Rohit Jaiswal</Title>
+        </div>
+      </>
+    ),
     amount: (
       <>
         <div className="author-info">
@@ -149,8 +163,8 @@ const data = [
     action: (
       <>
         <Space wrap >
-          <EditOutlined style={{color:'#1890ff'}} />
-          <DeleteOutlined style={{color:'red'}}/>
+          <EditOutlined style={{ color: '#1890ff' }} />
+          <DeleteOutlined style={{ color: 'red' }} />
         </Space>
       </>
     ),
@@ -173,6 +187,14 @@ const data = [
         {/* </Avatar.Group>{" "} */}
       </>
     ),
+
+    cname: (
+      <>
+        <div className="author-info">
+          <Title level={5}>Rohit Jaiswal</Title>
+        </div>
+      </>
+    ),
     amount: (
       <>
         <div className="author-info">
@@ -198,8 +220,8 @@ const data = [
     action: (
       <>
         <Space wrap >
-          <EditOutlined style={{color:'#1890ff'}} />
-          <DeleteOutlined style={{color:'red'}}/>
+          <EditOutlined style={{ color: '#1890ff' }} />
+          <DeleteOutlined style={{ color: 'red' }} />
         </Space>
       </>
     ),
@@ -222,6 +244,13 @@ const data = [
         {/* </Avatar.Group>{" "} */}
       </>
     ),
+    cname: (
+      <>
+        <div className="author-info">
+          <Title level={5}>Rohit Jaiswal</Title>
+        </div>
+      </>
+    ),
     amount: (
       <>
         <div className="author-info">
@@ -247,8 +276,8 @@ const data = [
     action: (
       <>
         <Space wrap >
-          <EditOutlined style={{color:'#1890ff'}} />
-          <DeleteOutlined style={{color:'red'}}/>
+          <EditOutlined style={{ color: '#1890ff' }} />
+          <DeleteOutlined style={{ color: 'red' }} />
         </Space>
       </>
     ),
@@ -270,6 +299,13 @@ const data = [
         {/* </Avatar.Group>{" "} */}
       </>
     ),
+    cname: (
+      <>
+        <div className="author-info">
+          <Title level={5}>Rohit Jaiswal</Title>
+        </div>
+      </>
+    ),
     amount: (
       <>
         <div className="author-info">
@@ -295,8 +331,8 @@ const data = [
     action: (
       <>
         <Space wrap >
-          <EditOutlined style={{color:'#1890ff'}} />
-          <DeleteOutlined style={{color:'red'}}/>
+          <EditOutlined style={{ color: '#1890ff' }} />
+          <DeleteOutlined style={{ color: 'red' }} />
         </Space>
       </>
     ),
@@ -318,6 +354,13 @@ const data = [
         {/* </Avatar.Group>{" "} */}
       </>
     ),
+    cname: (
+      <>
+        <div className="author-info">
+          <Title level={5}>Rohit Jaiswal</Title>
+        </div>
+      </>
+    ),
     amount: (
       <>
         <div className="author-info">
@@ -343,8 +386,8 @@ const data = [
     action: (
       <>
         <Space wrap >
-          <EditOutlined style={{color:'#1890ff'}} />
-          <DeleteOutlined style={{color:'red'}}/>
+          <EditOutlined style={{ color: '#1890ff' }} />
+          <DeleteOutlined style={{ color: 'red' }} />
         </Space>
       </>
     ),
@@ -367,6 +410,13 @@ const data = [
         {/* </Avatar.Group>{" "} */}
       </>
     ),
+    cname: (
+      <>
+        <div className="author-info">
+          <Title level={5}>Rohit Jaiswal</Title>
+        </div>
+      </>
+    ),
     amount: (
       <>
         <div className="author-info">
@@ -392,8 +442,8 @@ const data = [
     action: (
       <>
         <Space wrap >
-          <EditOutlined style={{color:'#1890ff'}} />
-          <DeleteOutlined style={{color:'red'}}/>
+          <EditOutlined style={{ color: '#1890ff' }} />
+          <DeleteOutlined style={{ color: 'red' }} />
         </Space>
       </>
     ),
@@ -647,10 +697,10 @@ const data = [
 function Catalogue() {
   const onChange = (e) => console.log(`radio checked:${e.target.value}`);
   const [isModalOpen, setIsModalOpen] = useState(false);
-  const [date,setDate]=useState('')
-  const option = [{ value: 'Equity', label: 'Equity' }, { value: 'Future', label: 'Future' },{value:'Options',label:'Options'}]
-  const dateFormat='YYYY-MM-DD'
-  const modes=[
+  const [date, setDate] = useState('')
+  const option = [{ value: 'Equity', label: 'Equity' }, { value: 'Future', label: 'Future' }, { value: 'Options', label: 'Options' }]
+  const dateFormat = 'YYYY-MM-DD'
+  const modes = [
     { value: 'Cash', label: 'Cash' },
     { value: 'Cheque', label: 'Cheque' },
     { value: 'Debit Card', label: 'Debit Card' },
@@ -676,26 +726,32 @@ function Catalogue() {
           <Input prefix={<SearchOutlined />} placeholder="Search" />
         </Col>
       </Row>
-      <Modal title="Add Debit" okText="Add" width={900} bodyStyle={{ height: 200 }} visible={isModalOpen} onOk={handleOk} onCancel={handleCancel}>
+      <Modal title="Add Debit" okText="Add" width={900} bodyStyle={{ height: 300 }} visible={isModalOpen} onOk={handleOk} onCancel={handleCancel}>
         <Form>
           <Row>
-          <Col xl={12}>
+            <Col xl={12}>
               <p >Branch Manager</p>
-              <Select placeholder="Select Branch Manager" size="large" options={option} style={{ width: 410, marginTop: '-14px' }} />
+              <Select placeholder="Select Branch Manager" size="large" options={option} style={{ width: 420, marginTop: '-14px' }} />
             </Col>
             <Col xl={12}>
               <label style={{ marginLeft: '8px' }}>Amount</label>
-              <Input placeholder="Enter Amount" style={{ marginLeft: '8px' }} />
+              <Input placeholder="Enter Amount" style={{ marginLeft: '8px',marginTop:'5px' }} />
             </Col>
           </Row>
           <Row style={{ marginTop: '20px' }}>
             <Col xl={12}>
-              <label >Date</label>
-              <DatePicker placeholder="Select Date" style={{width: 410 }} size="large" defaultValue={moment()} format={dateFormat}  />
+              <label >Client Name</label>
+              <Input placeholder="Enter Client Name" />
             </Col>
             <Col xl={12}>
-              <label style={{ marginLeft: '13px' }}>Payment Mode</label>
-              <Select placeholder="Select Mode" size="large" options={modes} style={{marginLeft:'13px', width: 420 }} />
+              <label style={{ marginLeft: '13px' }}>Date</label>
+              <DatePicker placeholder="Select Date" style={{ marginLeft: '13px', width: 420 }} size="large" defaultValue={moment()} format={dateFormat} />
+            </Col>
+          </Row>
+          <Row style={{ marginTop: '20px' }}>
+            <Col xl={12}>
+              <label >Payment Mode</label>
+              <Select placeholder="Select Mode" size="large" options={modes} style={{ width: 420 }} />
             </Col>
           </Row>
         </Form>

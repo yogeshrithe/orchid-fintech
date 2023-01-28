@@ -94,6 +94,11 @@ const columns = [
     dataIndex: "mobileno",
   },
   {
+    title: "Role",
+    key: "role",
+    dataIndex: "role",
+  },
+  {
     title: "Action",
     key: "action",
     dataIndex: "action",
@@ -130,6 +135,14 @@ const data = [
       <>
         <div className="author-info">
           <Title level={5}>6789768543</Title>
+        </div>
+      </>
+    ),
+
+    role: (
+      <>
+        <div className="author-info">
+          <Title level={5}>Branch Manager</Title>
         </div>
       </>
     ),
@@ -175,6 +188,13 @@ const data = [
         </div>
       </>
     ),
+    role: (
+      <>
+        <div className="author-info">
+          <Title level={5}>Branch Manager</Title>
+        </div>
+      </>
+    ),
     action: (
       <>
         <Space wrap >
@@ -214,6 +234,13 @@ const data = [
       <>
         <div className="author-info">
           <Title level={5}>6789768543</Title>
+        </div>
+      </>
+    ),
+    role: (
+      <>
+        <div className="author-info">
+          <Title level={5}>Branch Manager</Title>
         </div>
       </>
     ),
@@ -258,6 +285,13 @@ const data = [
         </div>
       </>
     ),
+    role: (
+      <>
+        <div className="author-info">
+          <Title level={5}>Branch Manager</Title>
+        </div>
+      </>
+    ),
     action: (
       <>
        <Space wrap >
@@ -296,6 +330,13 @@ const data = [
       <>
         <div className="author-info">
           <Title level={5}>6789768543</Title>
+        </div>
+      </>
+    ),
+    role: (
+      <>
+        <div className="author-info">
+          <Title level={5}>Branch Manager</Title>
         </div>
       </>
     ),
@@ -338,6 +379,13 @@ const data = [
       <>
         <div className="author-info">
           <Title level={5}>6789768543</Title>
+        </div>
+      </>
+    ),
+    role: (
+      <>
+        <div className="author-info">
+          <Title level={5}>Branch Manager</Title>
         </div>
       </>
     ),

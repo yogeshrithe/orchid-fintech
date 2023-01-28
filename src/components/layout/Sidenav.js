@@ -263,7 +263,7 @@ function Sidenav({ color }) {
                 <span className="icon" style={{
                   background: page === "payment" ? color : "",
                 }}>{profile}</span>
-                <span className="label">Add Payment Gateway</span>
+                <span className="label">Add Gateway</span>
               </Menu.Item>
             </NavLink>
           </Panel>
